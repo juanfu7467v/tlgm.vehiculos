@@ -1,14 +1,3 @@
-"""
-╔══════════════════════════════════════════════════════════════╗
-║          API Gateway — /seeker  v3.0  (solo seeker)         ║
-║                                                              ║
-║  • Un único endpoint: GET /seeker?dni=XXXXXXXX               ║
-║  • Procesamiento MULTIHILO de mensajes recibidos             ║
-║  • Captura foto + datos + direcciones + correos + sueldos    ║
-║  • Bot principal con fallback automático a bot de respaldo   ║
-╚══════════════════════════════════════════════════════════════╝
-"""
-
 import os
 import re
 import asyncio
