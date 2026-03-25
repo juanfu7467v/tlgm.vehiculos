@@ -14,7 +14,7 @@ primary_region = 'ams'
 
   # Este bloque es CRÍTICO para que la URL cargue al entrar
   [[http_service.checks]]
-    grace_period = "10s"
+    grace_period = "15s"   # Aumentado de 10s: da tiempo a Flask+Telethon para iniciar
     interval = "30s"
     method = "GET"
     timeout = "5s"
