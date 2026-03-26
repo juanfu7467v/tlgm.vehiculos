@@ -1,5 +1,10 @@
-app = 'tlgm-vehiculos'
-primary_region = 'ams'
+# fly.toml app configuration file generated for bankend-tlgm-2p on 2026-03-26T01:49:06Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'tlgm.seeker-'
+primary_region = 'iad'
 
 [build]
 
@@ -10,17 +15,9 @@ primary_region = 'ams'
   auto_start_machines = true
   min_machines_running = 0
   processes = ['app']
-  idle_timeout = '300s'
-
-  # CONFIGURACIÓN DE DESPERTADO AGRESIVA
-  [[http_service.checks]]
-    grace_period = "35s"  # Aumentado a 35s: da tiempo real a Telethon para conectar
-    interval = "20s"      # Revisa más seguido una vez que arranca
-    method = "GET"
-    timeout = "5s"        # Espera hasta 5s por la respuesta de Flask
-    path = "/health"
 
 [[vm]]
+  memory = '512mb'
   cpu_kind = 'shared'
   cpus = 1
   memory_mb = 512
