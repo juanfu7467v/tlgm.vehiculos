@@ -1,29 +1,3 @@
-"""
-╔══════════════════════════════════════════════════════════════════╗
-║         API Gateway  /seeker  v5.0  —  Full Capture             ║
-║                                                                  ║
-║  BUGS CORREGIDOS vs v4.0:                                        ║
-║                                                                  ║
-║  BUG #1 (CRÍTICO):                                               ║
-║    _detect_section() se llamaba sobre el texto YA LIMPIADO.      ║
-║    La limpieza borraba la línea completa:                        ║
-║      "[#LEDER_BOT] → SEEKER | TELEFONOS [PREMIUM]"              ║
-║    Sin esa línea, telefonos/sueldos/correos quedaban como        ║
-║    "otro" sin clasificar correctamente.                          ║
-║  SOLUCIÓN: detectar sección desde el texto RAW (antes de        ║
-║    limpiar), luego limpiar solo para extraer los campos.         ║
-║                                                                  ║
-║  BUG #2:                                                         ║
-║    Si el mensaje de foto tenía caption (texto adjunto), ese      ║
-║    texto se descartaba silenciosamente.                          ║
-║  SOLUCIÓN: si has_media=True y raw_text no está vacío,           ║
-║    procesar el texto como una sección de datos adicional.        ║
-║                                                                  ║
-║  MEJORA: logging detallado con primeros 120 chars de cada        ║
-║    mensaje → visible en fly.io logs para diagnóstico.            ║
-╚══════════════════════════════════════════════════════════════════╝
-"""
-
 import os
 import re
 import sys
