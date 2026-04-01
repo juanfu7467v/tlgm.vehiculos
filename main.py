@@ -32,8 +32,8 @@ PORT           = int(os.getenv("PORT", 8080))
 DOWNLOAD_DIR = "downloads"
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
-BOT_PRIMARY     = "@LEDERDATA_OFC_BOT"
-BOT_BACKUP      = "@lederdata_publico_bot"
+BOT_PRIMARY     = "@lederdata_oficial_bot"
+BOT_BACKUP      = "@lederdata_oficial_bot"
 ALL_BOTS        = [BOT_PRIMARY, BOT_BACKUP]
 
 TIMEOUT_PRIMARY = 60
